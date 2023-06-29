@@ -10,9 +10,10 @@
 		ECA2C5832A4C47510011155C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA2C5822A4C47510011155C /* AppDelegate.swift */; };
 		ECA2C5852A4C47510011155C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA2C5842A4C47510011155C /* SceneDelegate.swift */; };
 		ECA2C5872A4C47510011155C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA2C5862A4C47510011155C /* ViewController.swift */; };
-		ECA2C58A2A4C47510011155C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECA2C5882A4C47510011155C /* Main.storyboard */; };
 		ECA2C58C2A4C47540011155C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECA2C58B2A4C47540011155C /* Assets.xcassets */; };
 		ECA2C58F2A4C47540011155C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ECA2C58D2A4C47540011155C /* LaunchScreen.storyboard */; };
+		ECA2C5992A4C4BDF0011155C /* TransactionModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ECA2C5972A4C4BDF0011155C /* TransactionModel.xcdatamodeld */; };
+		ECA2C59E2A4C55700011155C /* TransactionCDService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA2C59D2A4C55700011155C /* TransactionCDService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,10 +21,11 @@
 		ECA2C5822A4C47510011155C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECA2C5842A4C47510011155C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		ECA2C5862A4C47510011155C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		ECA2C5892A4C47510011155C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ECA2C58B2A4C47540011155C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ECA2C58E2A4C47540011155C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ECA2C5902A4C47540011155C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ECA2C5982A4C4BDF0011155C /* ExpenseModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ExpenseModel.xcdatamodel; sourceTree = "<group>"; };
+		ECA2C59D2A4C55700011155C /* TransactionCDService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCDService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,48 @@
 		ECA2C5812A4C47510011155C /* ExpenseTracker */ = {
 			isa = PBXGroup;
 			children = (
-				ECA2C5822A4C47510011155C /* AppDelegate.swift */,
-				ECA2C5842A4C47510011155C /* SceneDelegate.swift */,
+				ECA2C5962A4C4BA40011155C /* App */,
+				ECA2C59C2A4C554D0011155C /* Services */,
+				ECA2C59A2A4C518F0011155C /* Coordinators */,
+				ECA2C59B2A4C51980011155C /* Modules */,
+				ECA2C5972A4C4BDF0011155C /* TransactionModel.xcdatamodeld */,
 				ECA2C5862A4C47510011155C /* ViewController.swift */,
-				ECA2C5882A4C47510011155C /* Main.storyboard */,
 				ECA2C58B2A4C47540011155C /* Assets.xcassets */,
 				ECA2C58D2A4C47540011155C /* LaunchScreen.storyboard */,
 				ECA2C5902A4C47540011155C /* Info.plist */,
 			);
 			path = ExpenseTracker;
+			sourceTree = "<group>";
+		};
+		ECA2C5962A4C4BA40011155C /* App */ = {
+			isa = PBXGroup;
+			children = (
+				ECA2C5822A4C47510011155C /* AppDelegate.swift */,
+				ECA2C5842A4C47510011155C /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		ECA2C59A2A4C518F0011155C /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		ECA2C59B2A4C51980011155C /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		ECA2C59C2A4C554D0011155C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				ECA2C59D2A4C55700011155C /* TransactionCDService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +162,6 @@
 			files = (
 				ECA2C58F2A4C47540011155C /* LaunchScreen.storyboard in Resources */,
 				ECA2C58C2A4C47540011155C /* Assets.xcassets in Resources */,
-				ECA2C58A2A4C47510011155C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,21 +174,15 @@
 			files = (
 				ECA2C5872A4C47510011155C /* ViewController.swift in Sources */,
 				ECA2C5832A4C47510011155C /* AppDelegate.swift in Sources */,
+				ECA2C5992A4C4BDF0011155C /* TransactionModel.xcdatamodeld in Sources */,
 				ECA2C5852A4C47510011155C /* SceneDelegate.swift in Sources */,
+				ECA2C59E2A4C55700011155C /* TransactionCDService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		ECA2C5882A4C47510011155C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				ECA2C5892A4C47510011155C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		ECA2C58D2A4C47540011155C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -290,11 +318,12 @@
 				DEVELOPMENT_TEAM = 6RRYH7RTN7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ExpenseTracker/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,9 +331,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = lyapin.dev.ExpenseTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -318,11 +350,12 @@
 				DEVELOPMENT_TEAM = 6RRYH7RTN7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ExpenseTracker/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -330,9 +363,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = lyapin.dev.ExpenseTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -358,6 +394,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		ECA2C5972A4C4BDF0011155C /* TransactionModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				ECA2C5982A4C4BDF0011155C /* ExpenseModel.xcdatamodel */,
+			);
+			currentVersion = ECA2C5982A4C4BDF0011155C /* ExpenseModel.xcdatamodel */;
+			path = TransactionModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = ECA2C5772A4C47510011155C /* Project object */;
 }
