@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC86CC4F2A4F184D00E922D0 /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC86CC4E2A4F184D00E922D0 /* Module.swift */; };
+		EC86CC512A4F1B9D00E922D0 /* AppFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC86CC502A4F1B9D00E922D0 /* AppFactory.swift */; };
+		EC86CC532A4F1C9000E922D0 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC86CC522A4F1C9000E922D0 /* Coordinator.swift */; };
 		ECA2C5832A4C47510011155C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA2C5822A4C47510011155C /* AppDelegate.swift */; };
 		ECA2C5852A4C47510011155C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA2C5842A4C47510011155C /* SceneDelegate.swift */; };
 		ECA2C5872A4C47510011155C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECA2C5862A4C47510011155C /* ViewController.swift */; };
@@ -17,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EC86CC4E2A4F184D00E922D0 /* Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Module.swift; sourceTree = "<group>"; };
+		EC86CC502A4F1B9D00E922D0 /* AppFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFactory.swift; sourceTree = "<group>"; };
+		EC86CC522A4F1C9000E922D0 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		ECA2C57F2A4C47510011155C /* ExpenseTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExpenseTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECA2C5822A4C47510011155C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ECA2C5842A4C47510011155C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +45,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EC86CC4D2A4F17BE00E922D0 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				EC86CC502A4F1B9D00E922D0 /* AppFactory.swift */,
+			);
+			path = Factories;
+			sourceTree = "<group>";
+		};
+		EC86CC542A4F1EF700E922D0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		ECA2C5762A4C47510011155C = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +81,8 @@
 			children = (
 				ECA2C5962A4C4BA40011155C /* App */,
 				ECA2C59C2A4C554D0011155C /* Services */,
+				EC86CC542A4F1EF700E922D0 /* Extensions */,
+				EC86CC4D2A4F17BE00E922D0 /* Factories */,
 				ECA2C59A2A4C518F0011155C /* Coordinators */,
 				ECA2C59B2A4C51980011155C /* Modules */,
 				ECA2C5972A4C4BDF0011155C /* TransactionModel.xcdatamodeld */,
@@ -83,6 +106,7 @@
 		ECA2C59A2A4C518F0011155C /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
+				EC86CC522A4F1C9000E922D0 /* Coordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -90,6 +114,7 @@
 		ECA2C59B2A4C51980011155C /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				EC86CC4E2A4F184D00E922D0 /* Module.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -172,11 +197,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC86CC532A4F1C9000E922D0 /* Coordinator.swift in Sources */,
 				ECA2C5872A4C47510011155C /* ViewController.swift in Sources */,
 				ECA2C5832A4C47510011155C /* AppDelegate.swift in Sources */,
 				ECA2C5992A4C4BDF0011155C /* TransactionModel.xcdatamodeld in Sources */,
 				ECA2C5852A4C47510011155C /* SceneDelegate.swift in Sources */,
 				ECA2C59E2A4C55700011155C /* TransactionCDService.swift in Sources */,
+				EC86CC512A4F1B9D00E922D0 /* AppFactory.swift in Sources */,
+				EC86CC4F2A4F184D00E922D0 /* Module.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

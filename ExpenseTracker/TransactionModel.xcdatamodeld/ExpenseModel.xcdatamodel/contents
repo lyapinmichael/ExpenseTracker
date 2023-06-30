@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22C65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Expense" representedClassName="Expense" parentEntity="Transaction" syncable="YES" codeGenerationType="class">
+        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ExpenseCategory" inverseName="expense" inverseEntity="ExpenseCategory"/>
+    </entity>
+    <entity name="ExpenseCategory" representedClassName="ExpenseCategory" parentEntity="TransactionCategory" syncable="YES" codeGenerationType="class">
+        <relationship name="expense" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Expense" inverseName="category" inverseEntity="Expense"/>
+    </entity>
     <entity name="Transaction" representedClassName=".Transaction" syncable="YES" codeGenerationType="class">
         <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="isPlanned" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="note" optional="YES" attributeType="String"/>
         <attribute name="uuid" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="value" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TransactionCategory"/>
     </entity>
-    <entity name="TransactionCategory" representedClassName=".TransactionCategory" syncable="YES" codeGenerationType="class">
-        <attribute name="isExpense" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+    <entity name="TransactionCategory" representedClassName="TransactionCategory" syncable="YES" codeGenerationType="class">
         <attribute name="name" attributeType="String"/>
-        <relationship name="transactions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Transaction"/>
     </entity>
 </model>

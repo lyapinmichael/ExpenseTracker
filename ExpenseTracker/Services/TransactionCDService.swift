@@ -40,6 +40,8 @@ final class TransactionCDService {
     static var shared = TransactionCDService()
     
     
+    // TODO: свойства transactions и categories будут удалены в следующих комитах
+    
     var transactions: [Transaction] = []
     var categories: [TransactionCategory] = []
     
@@ -64,6 +66,8 @@ final class TransactionCDService {
         
     }
     
+    // TODO: методы fetchTransactions() и fetchCategories() буду удалены в следующих комитах
+    
     func fetchTransactions() {
         let fetchRequest = Transaction.fetchRequest()
         transactions = (try? backgroundContext.fetch(fetchRequest)) ?? []
@@ -86,14 +90,13 @@ final class TransactionCDService {
         persistentContainer.performBackgroundTask({ [weak self] backgoundContext in
             guard let self = self else { return }
             
-            var transaction = Transaction.init(context: backgoundContext)
+            let transaction = Transaction.init(context: backgoundContext)
             
             transaction.uuid = newTransaction.uuid
             transaction.value = newTransaction.value
             transaction.isPlanned = newTransaction.isPlanned
             transaction.note = newTransaction.note
             transaction.date = newTransaction.date
-            transaction.category = newTransaction.category
 
             
             try? backgoundContext.save()
@@ -120,7 +123,7 @@ final class TransactionCDService {
     
     func addCategory(_ newCategory: TransactionCDService.NewCategory, completion: @escaping (Result<Any, TransactionServiceError>) -> Void) {
         
-        guard !categories.contains(where: {$0.name == newCategory.name && $0.isExpense == newCategory.isExpense}) else {
+        guard !categories.contains(where: {$0.name == newCategory.name}) else {
             completion(.failure(.categoryAlreadyExists))
             return
         }
@@ -128,7 +131,7 @@ final class TransactionCDService {
         let category = TransactionCategory.init(context: backgroundContext)
         
         category.name = newCategory.name
-        category.isExpense = newCategory.isExpense
+        
         
         try? backgroundContext.save()
         fetchCategories()
